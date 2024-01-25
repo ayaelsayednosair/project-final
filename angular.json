@@ -25,9 +25,31 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/bootstrap.min.css",
+              "src/templatemo.css",
+              "src/templatemo.min.css",
+              "src/styles.css",
+              "node_modules/sweetalert2/src/sweetalert2.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/slick.min.js",
+            "src/templatemo.min.js",
+            "src/templatemo.js",
+            "src/custom.js"
+
+
+
+
+
+
+
+
+
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +116,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "53432ee7-758a-4b75-9998-fa4c4dcfb3da"
   }
 }

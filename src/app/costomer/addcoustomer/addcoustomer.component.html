@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="card">
+    <form [formGroup]="coustomerform">
+      <h1 class="text-center my-5">Add Customers</h1>
+
+      <div class="formgroup">
+        <label class="fs-3">FristName</label><br />
+        <input
+          type="text"
+          id="one"
+          formControlName="fristname"
+          [ngClass]="{
+            'col-10': true,
+            'form-control': true,
+            'is-invalid': fristname?.invalid && fristname?.touched
+          }"
+        /><br />
+        <div *ngIf="fristname?.invalid && fristname?.touched">
+          <small class="text-danger" *ngIf="fristname?.hasError('required')">
+            اسم المستخدم مطلوب
+          </small>
+          <small class="text-danger" *ngIf="fristname?.hasError('minlength')">
+            اسم المستخدم على االقل ثالث خانات
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="fs-3">LastName</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="lastname"
+          [ngClass]="{
+            'col-10': true,
+            'form-control': true,
+            'is-invalid': lastname?.invalid && lastname?.touched
+          }"
+        />
+        <div *ngIf="lastname?.invalid && lastname?.touched">
+          <small class="text-danger" *ngIf="lastname?.hasError('required')">
+            اسم المستخدم مطلوب
+          </small>
+          <small class="text-danger" *ngIf="lastname?.hasError('minlength')">
+            اسم المستخدم على االقل ثالث خانات
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="fs-3">Email</label>
+        <input
+          type="Email"
+          class="form-control"
+          formControlName="email"
+          [ngClass]="{
+            'col-10': true,
+            'form-control': true,
+            'is-invalid': email?.invalid && email?.touched
+          }"
+        />
+        <div *ngIf="email?.invalid && email?.touched">
+          <small class="text-danger" *ngIf="email?.hasError('required')">
+            من فضلك أدخل الايميل
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="fs-3">Address</label>
+        <input
+          type="Address"
+          class="form-control"
+          formControlName="add"
+          [ngClass]="{
+            'col-10': true,
+            'form-control': true,
+            'is-invalid': add?.invalid && add?.touched
+          }"
+        />
+        <div *ngIf="add?.invalid && add?.touched">
+          <small class="text-danger" *ngIf="add?.hasError('required')">
+            من فضلك أدخل العنوان
+          </small>
+          <small class="text-danger" *ngIf="add?.hasError('pattern')">
+            اسم المستخدم على االقل ثالث خانات
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="fs-3">Phone</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="phone"
+          [ngClass]="{
+            'col-10': true,
+            'form-control': true,
+            'is-invalid': phone?.invalid && phone?.touched
+          }"
+        />
+        <div *ngIf="phone?.invalid && phone?.touched">
+          <small class="text-danger" *ngIf="phone?.hasError('required')">
+            من فضلك أدخل رقم الهاتف
+          </small>
+          <small class="text-danger" *ngIf="phone?.hasError('maxLength')">
+            رقم الهاتف احدي عشر رقم
+          </small>
+        </div>
+      </div>
+      <button
+        class="btn btn-primary px-5"
+        value="save"
+        [routerLink]="['/list']"
+        (click)="addcoust()"
+      >
+        submit
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="card">
+    <form [formGroup]="updatecoustform">
+      <h1 class="text-center my-5">Edite coustomer</h1>
+
+      <div class="formgroup">
+        <label>fristname</label><br />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="fristname"
+        /><br />
+      </div>
+
+      <div class="form-group">
+        <label>lastname</label>
+        <input type="text" class="form-control" formControlName="lastname" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="Email" class="form-control" formControlName="email" />
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" class="form-control" formControlName="add" />
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" formControlName="phone" />
+      </div>
+      <button
+        class="btn btn-primary px-5"
+        value="save"
+        (click)="updatecoust()"
+        [routerLink]="['/list']"
+      >
+        submit
+      </button>
+    </form>
+  </div>
+</div>

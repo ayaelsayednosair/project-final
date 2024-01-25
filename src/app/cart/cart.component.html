@@ -1,0 +1,96 @@
+<div class="container">
+  <table class="table table-hover text-center">
+    <thead>
+      <tr class="table-active"></tr>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">sub total</th>
+        <th scope="col">Remove product</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i = index">
+        <td scope="row">{{ i + 1 }}</td>
+        <td><img [src]="product.image" height="100px" /></td>
+        <td>${{ product.price }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="increaseProduct(product)"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <span class="mx-2">{{ product.qnt }}</span>
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="decreaseProduct(product)"
+          >
+            <i class="fa-solid fa-minus"></i>
+          </button>
+        </td>
+        <td>
+          {{ product.price * product.qnt }}
+        </td>
+        <td>
+          <button
+            class="btn btn-danger float-center"
+            (click)="Delepro(product.id)"
+          >
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5" class="text-end fw-bold">Total:</td>
+        <td>{{ totalPrice | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <button class="btn btn-danger float-end">
+    <i class="fa-solid fa-trash-can"></i>
+    Remove All product
+  </button> -->
+</div>
+
+<!-- <section class="Cart-section">
+  <h2>Cart</h2>
+  <div class="container d-flex justify-content-center">
+    <table class="table table-hover text-center">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">sub total</th>
+      </tr>
+      <tr *ngFor="let product of products; let i = index">
+        <td scope="row">{{ i + 1 }}</td>
+        <td><img [src]="product.image" height="100px" /></td>
+        <td>${{ product.price }}</td>
+        <td>
+          <button type="button" class="btn btn-success">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <span class="mx-2">1</span>
+          <button type="button" class="btn btn-success">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+        </td>
+        <td>
+          {{ product.price }}
+          <button
+            class="btn btn-danger float-end"
+            (click)="Delepro(product.id)"
+          >
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</section> -->
