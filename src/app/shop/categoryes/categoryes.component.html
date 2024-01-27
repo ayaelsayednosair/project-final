@@ -2,93 +2,6 @@
   <div class="row">
     <div class="col-lg-3">
       <h1 class="h2 pb-4">Categories</h1>
-
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne"
-              aria-expanded="false"
-              aria-controls="flush-collapseOne"
-              (click)="filter('electronics')"
-            >
-              Electronics
-            </button>
-          </h2>
-          <div
-            id="flush-collapseOne"
-            class="accordion-collapse collapse"
-            aria-labelledby="flush-headingOne"
-            data-bs-parent="#accordionFlushExample"
-          ></div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTwo"
-              aria-expanded="false"
-              aria-controls="flush-collapseTwo"
-              (click)="filter('fashion')"
-            >
-              Fashion
-            </button>
-          </h2>
-          <div
-            id="flush-collapseTwo"
-            class="accordion-collapse collapse"
-            aria-labelledby="flush-headingTwo"
-            data-bs-parent="#accordionFlushExample"
-          ></div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseThree"
-              aria-expanded="false"
-              aria-controls="flush-collapseThree"
-              (click)="filter('jewelery')"
-            >
-              Jowellery
-            </button>
-          </h2>
-          <div
-            id="flush-collapseThree"
-            class="accordion-collapse collapse"
-            aria-labelledby="flush-headingThree"
-            data-bs-parent="#accordionFlushExample"
-          ></div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseThree"
-              aria-expanded="false"
-              aria-controls="flush-collapseThree"
-              (click)="filter('')"
-            >
-              All Product
-            </button>
-          </h2>
-          <div
-            id="flush-collapseThree"
-            class="accordion-collapse collapse"
-            aria-labelledby="flush-headingThree"
-            data-bs-parent="#accordionFlushExample"
-          ></div>
-        </div>
-      </div>
     </div>
 
     <div class="col-lg-9">
@@ -108,7 +21,7 @@
     <div class="row">
       <div
         class="col-md-4"
-        *ngFor="let product of filtercategory | filter : searchText : 'title'"
+        *ngFor="let product of productCategory | filter : searchText : 'title'"
       >
         <div class="card mb-4 product-wap rounded-0">
           <div class="card rounded-0">
@@ -144,11 +57,9 @@
             </div>
           </div>
           <div class="card-body">
-            <h5>
+            <div class="h3 text-decoration-none">
               {{ product.title }}
-            </h5>
-
-            <p><strong>Description:</strong> {{ product.description }}</p>
+            </div>
             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
               <li>M/L/X/XL</li>
               <li class="pt-2">

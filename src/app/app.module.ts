@@ -8,7 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { ShopComponent } from './shop/shop.component';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
-import { VeiwComponent } from './veiw/veiw.component';
+import { VeiwComponent } from './shop/veiw/veiw.component';
 import { CartComponent } from './cart/cart.component';
 import { CostomerComponent } from './costomer/costomer.component';
 import { AddcoustomerComponent } from './costomer/addcoustomer/addcoustomer.component';
@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewcoustComponent } from './costomer/viewcoust/viewcoust.component';
 import { EditecoustComponent } from './costomer/editecoust/editecoust.component';
 import { FilterPipe } from './filter.pipe';
+import { CategoryesComponent } from './shop/categoryes/categoryes.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FilterPipe } from './filter.pipe';
     ViewcoustComponent,
     EditecoustComponent,
     FilterPipe,
+    CategoryesComponent,
   ],
 
   imports: [

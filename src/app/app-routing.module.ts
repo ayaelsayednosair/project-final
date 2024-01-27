@@ -7,11 +7,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { VeiwComponent } from './veiw/veiw.component';
+import { VeiwComponent } from './shop/veiw/veiw.component';
 import { CartComponent } from './cart/cart.component';
 import { AppComponent } from './app.component';
 import { CostomerComponent } from './costomer/costomer.component';
 import { ViewcoustComponent } from './costomer/viewcoust/viewcoust.component';
+import { CategoryesComponent } from './shop/categoryes/categoryes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'list', component: ListcoustomerComponent },
   { path: 'Veiw2/:id', component: ViewcoustComponent },
   { path: 'edite/:id', component: EditecoustComponent },
+  { path: 'category/:category', component: CategoryesComponent },
 
   { path: '**', component: AppComponent },
 ];

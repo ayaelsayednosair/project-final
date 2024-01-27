@@ -1,9 +1,9 @@
-import { Product } from './../interface/product';
+import { Product } from '../../interface/product';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductsService } from '../service/products.service';
+import { ProductsService } from '../../service/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../service/cart.service';
+import { CartService } from '../../service/cart.service';
 
 @Component({
   selector: 'app-veiw',
