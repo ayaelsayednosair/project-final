@@ -19,7 +19,9 @@ export class CategoryesComponent implements OnInit {
     private productsrv: ProductsService,
     private cserve: CartService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    console.log('tyututiit');
+  }
   ngOnInit(): void {
     this.productsrv.getdatapi().subscribe((dat: Product[]) => {
       this.products = dat;
@@ -28,8 +30,8 @@ export class CategoryesComponent implements OnInit {
       this.productCategory = this.products.filter((a: any) => {
         if (
           a.category ==
-            this.route.snapshot.params['category'].replace('_', ' ') ||
-          this.route.snapshot.params['category'].replace('_', ' ') == ''
+            this.route.snapshot.params['categoryName'].replace('_', ' ') ||
+          this.route.snapshot.params['categoryName'].replace('_', ' ') == ''
         ) {
           return a;
         }
@@ -52,8 +54,8 @@ export class CategoryesComponent implements OnInit {
   filter(category: string) {
     this.filtercategory = this.products.filter((a: any) => {
       if (
-        a.category == this.route.snapshot.params['category'] ||
-        this.route.snapshot.params['category'] == ''
+        a.category == this.route.snapshot.params['categoryName'] ||
+        this.route.snapshot.params['categoryName'] == ''
       ) {
         return a;
       }

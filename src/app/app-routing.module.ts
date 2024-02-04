@@ -26,8 +26,7 @@ const routes: Routes = [
   { path: 'list', component: ListcoustomerComponent },
   { path: 'Veiw2/:id', component: ViewcoustComponent },
   { path: 'edite/:id', component: EditecoustComponent },
-  { path: 'category/:category', component: CategoryesComponent },
-
+  { path: 'category/:categoryName', component: CategoryesComponent },
   { path: '**', component: AppComponent },
 ];
 

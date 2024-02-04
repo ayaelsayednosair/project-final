@@ -53,8 +53,4 @@ export class ShopComponent implements OnInit {
       }
     });
   }
-
-  toggleCollapse(category: any): void {
-    category.collapsed = !category.collapsed;
-  }
 }

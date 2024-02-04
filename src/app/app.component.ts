@@ -51,16 +51,10 @@ export class AppComponent implements OnInit {
       }
     );
     this.proservec.getdatapi().subscribe((dat: Product[]) => {
+      console.log(this.products + 'iutojre9jture');
       this.products = dat;
       this.filtercategory = dat;
-      // this.products.forEach((a: any) => {
-      //   if (
-      //     a.category === "women's clothing" ||
-      //     a.category === "men's clothing"
-      //   ) {
-      //     a.category = 'fashion';
-      //   }
-      // });
+
       this.products ==
         this.products.filter((a: any) => {
           if (
@@ -68,9 +62,15 @@ export class AppComponent implements OnInit {
             this.route.snapshot.params['category'] == ''
           ) {
             return a;
+          } else {
+            // If no category is selected, show all products
+            this.filtercategory = [...this.products];
           }
         });
-      console.log(this.products);
+    });
+    console.log(this.products + 'iutojre9jture5555555555555');
+    this.cserve.search.subscribe((value: any) => {
+      this.searchText = value;
     });
   }
   filter(category: string) {
@@ -88,6 +88,7 @@ export class AppComponent implements OnInit {
     console.log('fgdgfgfjhgj');
     this.email.reset();
   }
+
   search(event: any) {
     this.searchText = (event.target as HTMLInputElement).value;
     console.log(this.searchText);
